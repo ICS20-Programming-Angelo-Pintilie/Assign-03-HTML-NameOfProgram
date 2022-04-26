@@ -1,62 +1,73 @@
 <!DOCTYPE html>
-<html lang="en-ca">
-   <head>
-      <!-- Metadata -->
-      <meta charset="utf-8" />
-      <meta name="description" content="Assign-02" />
-      <meta name="keywords" content="immaculata, ics2o" />
-      <meta name="author" content="Angelo Pintilie" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <!-- Link for Favicon -->
-      <link rel="apple-touch-icon" sizes="180x180" href="./fav_index/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="./fav_index/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="./fav_index/favicon-16x16.png" />
-      <link rel="manifest" href="./fav_index/site.webmanifest" />
-      <!-- Material Design Lite -->
-      <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-      <!-- Link for Stylesheet -->
-      <link rel="stylesheet" href="./css/style.css" />
-      <!-- Webpage title -->
-      <title>Calculating SA and Volume of a Octagonal Prism</title>
-      <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-purple.min.css">
-      <!-- Material Design icon font -->
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-   </head>
-   <body>
-      <!-- Link to javascript file -->
-      <script src="./js/script.js"></script>
-      <h2>Volume Calculator For the Volume of a </h2>
-      <p>Please enter the height of the octagonal prism below</p>
-      <!-- Form to retrieve information (height) -->
-      <form action="javascript:convertCelToFahr()">
-         <label for="temp">Height:</label>
-         <input type="number" step="any" id="height" placeholder="h ="  name="height">
-         <br><br>
-         <input type="submit" value="Convert">
-      </form>
-      <br>
-      <!-- Create a space where the user information will be displayed -->
-      <div id="display-fahrResults">
-         <div id="volume" class="res"></div>
-      </div>
-      </center>
-      <h2>Converting degrees from Fahrenheit into Celsius</h2>
-      <p>Please input the temperature in <i>Degrees Fahrenheit (°F)</i></p>
-      <!-- Form to retrieve information (base edge) -->
-      <form action="javascript:convertFahrToCel()">
-         <label for="temp">Temperature in Fahrenheit:</label>
-         <input type="number" step="any" id="base-edge" placeholder="0 °F" pattern="[0-9]+([\.,][0-9]+)?" name="base-edge">
-         <br><br>
-         <input type="submit" value="Convert">
-      </form>
-      <br>
-      <!-- Create a space where the user information will be displayed -->
-      <div id="volume">
-         <div id="volume" class="res"></div>
-      </div>
-      </center>
-      <hr>
-      <center><img src="./images/therm.jpg"></center>
-      <hr>
-   </body>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Area and Perimeter, with JavaScript" />
+    <meta name="keywords" content="immaculata, ics2o" />
+    <meta name="author" content="Angelo Pintilie" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="./fav_index/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./fav_index/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./fav_index/favicon-16x16.png" />
+    <link rel="manifest" href="./fav_index/site.webmanifest" />
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-green.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    
+    <title>SA and Volume Calculator</title>
+  </head>
+  <body>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="./js/script.js"></script>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Volume And SA, With JS</span>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <table>
+          <tr>
+            <th>
+              <img src="./images/formula.png" alt="triangle" width="75%" height="auto"/>
+            </th>
+            <th>
+              <h2>Formulas</h2>
+              <h3>V = (s)³</h3>
+              <h3>SA = 6s²</h3>
+              <center><h4>This page will calculate Volume and Surface Area of a cube, with any given side length!</h4></center>
+            </th>
+          </tr>
+        </table>
+        <!-- Simple Textfield -->
+        <form action="#">
+          <p>Side length</p>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="side-length-of-cube"
+            />
+            <label class="mdl-textfield__label" for="side-length-of-cube">Side length...</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+        </form>
+        </form>
+
+        <!-- Accent-colored raised button with ripple -->
+        <button
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" 
+          onclick="algorithm()"
+        >
+          Button
+        </button>
+        <br/>
+        <div id="surface-area"></div>
+        <div id="volume"></div>
+      </main>
+    </div>
+  </body>
 </html>
