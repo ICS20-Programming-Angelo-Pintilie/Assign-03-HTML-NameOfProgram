@@ -10,10 +10,10 @@ function algorithm () {
   // variable for base edge
   let baseEdge = parseFloat(document.getElementById("base-edge").value)
   // calculates surface area
-  const SURFACE_AREA = (8*base-edge*height+4(1+Math.sqrt(2)a**2)
+  let surfaceArea = (8*base-edge*height+4(1+Math.sqrt(2)a**2)
   // calculates the volume 
-  const VOLUME = (2(1+Math.sqrt(2))base-edge**2*height)
+  let volume = (2(1+Math.sqrt(2))base-edge**2*height)
   // prints out results
-  document.getElementById('surface-area').innerHTML = "surface area = " + SURFACE_AREA.toFixed(2)
-  document.getElementById('volume').innerHTML = "volume = " + VOLUME.toFixed(2)
+  document.getElementById('surface-area').innerHTML = "surface area = " + surfaceArea.toFixed(2)
+  document.getElementById('volume').innerHTML = "volume = " + volume.toFixed(2)
 }
